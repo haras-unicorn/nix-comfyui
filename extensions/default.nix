@@ -41,6 +41,8 @@
     callPackage ./kosinkadink-video-helper-suite { };
   lev145-images-grid =
     callPackage ./lev145-images-grid { };
+  pythongosssss-custom-scripts =
+    callPackage ./pythongosssss-custom-scripts { };
   ssitu-ultimate-sd-upscale =
     callPackage ./ssitu-ultimate-sd-upscale { };
 }
