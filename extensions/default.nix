@@ -33,6 +33,8 @@
     callPackage ./kijai-ic-light { };
   kijai-supir =
     callPackage ./kijai-supir { };
+  kijai-wan-video-wrapper =
+    callPackage ./kijai-wan-video-wrapper { };
   kosinkadink-advanced-controlnet =
     callPackage ./kosinkadink-advanced-controlnet { };
   kosinkadink-animatediff-evolved =
