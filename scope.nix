@@ -9,11 +9,15 @@ pkgs.lib.makeScope pkgs.newScope (self:
   inherit (import ./toml.nix) toTOML;
 
   inherit (import ./packages {
-    inherit (self) callPackage comfyui-frontend;
+    inherit (self)
+      callPackage
+      comfyui-frontend
+      comfyui-frontend-package;
   })
     check-pkgs
     comfyui
     comfyui-frontend
+    comfyui-frontend-package
     comfyui-unwrapped
     krita-ai-diffusion
     ;

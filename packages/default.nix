@@ -1,4 +1,4 @@
-{ callPackage, comfyui-frontend }:
+{ callPackage, comfyui-frontend, comfyui-frontend-package }:
 
 {
   check-pkgs =
@@ -17,8 +17,15 @@
   comfyui-frontend =
     callPackage ./comfyui-frontend { };
 
+  comfyui-frontend-package =
+    callPackage ./comfyui-frontend-package {
+      frontend = comfyui-frontend;
+    };
+
   comfyui-unwrapped =
-    callPackage ./comfyui-unwrapped { };
+    callPackage ./comfyui-unwrapped {
+      frontend-package = comfyui-frontend-package;
+    };
 
   krita-ai-diffusion =
     callPackage ./krita-ai-diffusion { };

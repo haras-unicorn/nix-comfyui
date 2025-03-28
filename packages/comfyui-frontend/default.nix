@@ -2,20 +2,17 @@
 
 buildNpmPackage {
   name = "comfyui-frontend";
+  version = "1.15.4";
 
   src = fetchFromGitHub {
     owner = "Comfy-Org";
     repo = "ComfyUI_frontend";
     fetchSubmodules = false;
-    rev = "44aa1bf8c36f7ab11d9167fbf31ed9a1f18cd197";
-    hash = "sha256-c4dlS7rPrhzXZ6ikgfGwJuoNz5bR64vaEhu9eCvE7jI=";
+    rev = "0752e8b98675e0f9fea02f6ab0e9c0154deb54fe";
+    hash = "sha256-KHiVrK3RzIbPyy2YbttLXBacQD0SF5K01eols6CzrqA=";
   };
 
-  npmDepsHash = "sha256-DtUdY7QaCaAlqkxlawlSGFGHoNA+TWvhMVDgytvLanA=";
-
-  patches = [
-    ./0001-use-neutral-colors.patch
-  ];
+  npmDepsHash = "sha256-PvmaiavUjlKXqnPC9gTY+5kHk0z4zc6Pe456Cf+qpfY=";
 
   installPhase = ''
     runHook preInstall

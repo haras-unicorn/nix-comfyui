@@ -14,7 +14,6 @@ buildExtension {
 
   propagatedBuildInputs = [
     python3.pkgs.gguf
-    python3.pkgs.numpy
     python3.pkgs.safetensors
     python3.pkgs.torch
     python3.pkgs.tqdm

@@ -1,4 +1,9 @@
-{ emptyPyproject, fetchFromGitHub, lib, python3 }:
+{ emptyPyproject
+, fetchFromGitHub
+, lib
+, python3
+, frontend-package
+}:
 
 let
   pyproject = emptyPyproject.override {
@@ -12,8 +17,8 @@ let
     owner = "comfyanonymous";
     repo = "ComfyUI";
     fetchSubmodules = false;
-    rev = "55add502206ed5511a04215db4ab8f1cfa3d99ae";
-    hash = "sha256-QwdgUhOrTYD4D5lqfayoTVCwORE/I5s6NL/+iWHpOlw=";
+    rev = "75c1c757d90ca891eff823893248ef8b51d31d01";
+    hash = "sha256-UGM2nrxveSEPuZAFY+Os0R1z/eWzlm8viG7sobis498=";
   };
 
   shortRev = builtins.substring 0 8 src.rev;
@@ -21,7 +26,7 @@ in
 
 python3.pkgs.buildPythonPackage {
   name = "comfyui-unwrapped";
-  version = "0.0.0";
+  version = "0.3.27";
 
   format = "pyproject";
 
@@ -32,6 +37,7 @@ python3.pkgs.buildPythonPackage {
   ];
 
   propagatedBuildInputs = [
+    frontend-package
     python3.pkgs.aiohttp
     python3.pkgs.einops
     python3.pkgs.kornia
@@ -54,6 +60,8 @@ python3.pkgs.buildPythonPackage {
     python3.pkgs.tqdm
     python3.pkgs.transformers
     python3.pkgs.typing-extensions
+    python3.pkgs.yarl
+    python3.pkgs.av
   ];
 
   postPatch = ''
@@ -106,7 +114,6 @@ python3.pkgs.buildPythonPackage {
     ];
 
     check-pkgs.ignoredModuleNames = [
-      "^comfy_types$"
       "^intel_extension_for_pytorch$"
       "^new_updater$"
       "^torch_directml$"
