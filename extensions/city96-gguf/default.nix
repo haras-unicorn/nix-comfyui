@@ -8,14 +8,16 @@ buildExtension {
     owner = "city96";
     repo = "ComfyUI-GGUF";
     fetchSubmodules = false;
-    rev = "5875c52f59baca3a9372d68c43a3775e21846fe0";
-    hash = "sha256-3RqFfvXdn9sCIlctqa14c2fvluSmJCR+llfZo/MV64o=";
+    rev = "bc5223b0e37e053dbec2ea5e5f52c2fd4b8f712a";
+    hash = "sha256-wxOBFyxLkeJqDI5DuvqDP4MONCsipKyS5qx8PiEfmI0=";
   };
 
   propagatedBuildInputs = [
     python3.pkgs.gguf
     python3.pkgs.safetensors
     python3.pkgs.torch
+    python3.pkgs.protobuf
+    python3.pkgs.sentencepiece
     python3.pkgs.tqdm
   ];
 
